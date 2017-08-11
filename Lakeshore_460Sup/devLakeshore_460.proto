@@ -1,0 +1,236 @@
+Terminator = '\r\n';
+ReplyTimeout = 2000;
+
+getIDN {
+    out "*IDN?";
+    #Read no more that 39 chars (EPICS limit)
+    in "%/(.{0,39})/";
+    ExtraInput = Ignore;
+}
+
+getUnit
+{
+    out "UNIT?";
+    in "%s";
+    ExtraInput = Ignore;
+}
+
+setUnit
+{
+    out "UNIT %{G|T}";
+}
+
+setSource
+{
+ 	out "VSRC %d";
+}
+
+getSource
+{
+ 	out "VSRC?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+getChannel{
+	out "CHNL?";
+    in "%d";
+    
+ }
+
+setChannel
+{
+	out "CHNL %d";
+}
+
+Reset
+{
+	out "*RST";
+}
+
+getAllFields
+{
+	out "ALLF?";
+    in "%f";
+    ExtraInput = Ignore;
+}
+
+getMagneticFieldMultiplier
+{
+ 	out "FIELDM?";
+    in "%d";
+    ExtraInput = Ignore;
+ }
+
+getMagneticFieldReading
+{
+ 	out "FIELD?";
+    in "%d";
+    ExtraInput = Ignore;
+ }
+
+getOnOff
+{
+	out "ONOFF?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+setOnOff
+{
+	out "ONOFF %{0|1}";
+}
+
+getACDCFieldReading
+{
+	out "ACDC?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+setACDCFieldReading
+{
+    out "ACDC %{0|1}";
+}
+
+getPRMSReading
+{
+	out "PRMS?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+setPRMSReading
+{
+    out "PRMS %{0|1}";
+}
+
+getDisplayFilter
+{
+	out "FILT?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+setDisplayFilter
+{
+    out "FILT %{0|1}";
+}
+
+getDisplayFilterWindow
+{
+      out "FWIN?";
+      in "%d";
+}
+
+setDisplayFilterWindow
+{
+      out "FWIN %d";      
+}
+
+setRelativeMode
+{
+    out "REL %{0|1}";
+}
+
+getRelativeMode
+{
+     out "REL? %d";
+     in "%d";
+     ExtraInput= Ignore;
+}
+
+setMaxHold
+{
+    out "MAX %{0|1}";
+}
+
+getMaxHold
+{
+    out "MAX?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+setAutoRange
+{
+    out "AUTO %{0|1}";
+}
+
+getAutoRange
+{
+    out "AUTO?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+getFilterPoints
+{
+    out "FNUM?";
+    in "%d";
+    ExtraInput = Ignore;
+}
+
+setFilterPoints
+{
+    out "FNUM %d";
+}
+
+getManualRange
+{
+    out "RANGE?";
+    in "%d";
+}
+
+setManualRange
+{
+    out "RANGE %d";
+}
+
+ReadMaxReadingMultiplier
+{
+     out "MAXRM?";
+     in "%d";
+}
+
+ReadRelativeModeSetpointMultiplier
+{   
+     out "RELSM?";
+     in "%d";
+
+}
+
+ReadRelativeModeSetpoint
+{
+     out "RELS?";
+     in "%f";
+}
+
+ReadMaxReading
+{
+    out "MAXR?";
+    in "%f";
+}
+
+
+getRelativeModeReading{
+    out "RELR?";
+    in "%f";
+}
+
+
+
+setRelativeModeSetpoint
+{
+    out "RELS %f";
+}
+
+
+getRelativeModeReadingMultiplier{
+    out "RELRM?";
+    in "%d";
+}
+
+
+
+

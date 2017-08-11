@@ -1,0 +1,311 @@
+record(stringin, "$(P)IDN")
+{
+    field(DESC, "SCPI identification string")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getIDN $(PORT)")
+    field(PINI, "YES")
+}
+
+
+record(bi, "$(P)UNIT") 
+{
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getUnit $(PORT)")
+    field(ZNAM, "G")
+    field(ONAM, "T")
+}
+
+record(bo, "$(P)UNIT:SP") 
+{
+    field(SCAN, "Passive")
+    field(DTYP, "stream")
+    field(OUT,  "@devLakeshore_460.proto setUnit $(PORT)")
+    field(ZNAM, "G")
+    field(ONAM, "T")
+}
+
+record(bi, "$(P)OUTPUTSTATUS") 
+{
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getOnOff $(PORT)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "$(P)OUTPUTSTATUS:SP") 
+{
+    field(SCAN, "Passive")
+    field(DTYP, "stream")
+    field(OUT,  "@devLakeshore_460.proto setOnOff $(PORT)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bi, "$(P)OUTPUTSTATUS") 
+{
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getOnOff $(PORT)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "$(P)OUTPUTSTATUS:SP") 
+{
+    field(SCAN, "Passive")
+    field(DTYP, "stream")
+    field(OUT,  "@devLakeshore_460.proto setOnOff $(PORT)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bi, "$(P)OUTPUTMODE") 
+{
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getACDCFieldReading $(PORT)")
+    field(ZNAM, "AC")
+    field(ONAM, "DC")
+}
+
+record(bo, "$(P)OUTPUTMODE:SP") 
+{
+    field(SCAN, "Passive")
+    field(DTYP, "stream")
+    field(OUT,  "@devLakeshore_460.proto setACDCFieldReading $(PORT)")
+    field(ZNAM, "AC")
+    field(ONAM, "DC")
+}
+
+
+record(bi, "$(P)PRMS") 
+{
+    field(DESC, "Get Peak/RMS Field Reading")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getPRMSReading $(PORT)")
+    field(ZNAM, "RMS")
+    field(ONAM, "PEAK")
+}
+
+record(bo, "$(P)PRMS:SP") 
+{
+    field(DESC, "Set Peak/RMS Field Reading")
+    field(SCAN, "Passive")
+    field(DTYP, "stream")
+    field(OUT,  "@devLakeshore_460.proto setPRMSReading $(PORT)")
+    field(ZNAM, "RMS")
+    field(ONAM, "PEAK")
+}
+
+record(bi, "$(P)FILTER") 
+{
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getDisplayFilter $(PORT)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "$(P)FILTER:SP") 
+{
+    field(SCAN, "Passive")
+    field(DTYP, "stream")
+    field(OUT,  "@devLakeshore_460.proto setDisplayFilter $(PORT)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bi, "$(P)RELMODE") 
+{
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getRelativeMode $(PORT)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "$(P)RELMODE:SP") 
+{
+    field(SCAN, "Passive")
+    field(DTYP, "stream")
+    field(OUT,  "@devLakeshore_460.proto setRelativeMode $(PORT)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bi, "$(P)MAXHOLD") 
+{
+     field(DESC, "Max Hold")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getMaxHold $(PORT)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bo, "$(P)MAXHOLD:SP") 
+{
+    field(DESC, "Set Max Hold")
+    field(SCAN, "Passive")
+    field(DTYP, "stream")
+    field(OUT,  "@devLakeshore_460.proto setMaxHold $(PORT)")
+    field(ZNAM, "OFF")
+    field(ONAM, "ON")
+}
+
+record(bi, "$(P)AUTO") 
+{
+     field(DESC, "Auto Range")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getAutoRange $(PORT)")
+    field(ZNAM, "Auto Range OFF")
+    field(ONAM, "Auto Range ON")
+}
+
+record(bo, "$(P)AUTO:SP") 
+{
+    field(DESC, "Set Auto Range")
+    field(SCAN, "Passive")
+    field(DTYP, "stream")
+    field(OUT, "@devLakeshore_460.proto setAutoRange $(PORT)")
+    field(ZNAM, "Auto Range OFF")
+    field(ONAM, "Auto Range ON")
+}
+
+record(ai, "$(P)ALLFIELDS") 
+{
+    field(DESC, "All Fields")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP, "@devLakeshore_460.proto getAllFields $(PORT)")
+    field(PREC, "3")
+}
+
+record(mbbi, "$(P)SOURCE") 
+{
+    field(DESC, "Vector Magnitude Source")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP, "@devLakeshore_460.proto getSource $(PORT)")
+    field(ONST, "XYZ")
+    field(TWST, "XY")
+    field(THST, "XZ")
+    field(FRST, "YZ")
+    field(FVST, "X-Y")
+}
+
+record(mbbo, "$(P)SOURCE:SP") 
+{
+    field(DESC, "Set Vector Magnitude Source")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(OUT, "@devLakeshore_460.proto setSource $(PORT)")
+    field(ONST, "XYZ")
+    field(TWST, "XY")
+    field(THST, "xz")
+    field(FRST, "YZ")
+    field(FVST, "X-Y")
+}
+
+record(mbbi, "$(P)SOURCE") 
+{
+    field(DESC, "Vector Magnitude Source")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP, "@devLakeshore_460.proto getSource $(PORT)")
+    field(ONST, "XYZ")
+    field(TWST, "XY")
+    field(THST, "XZ")
+    field(FRST, "YZ")
+    field(FVST, "X-Y")
+}
+
+record(mbbo, "$(P)SOURCE:SP") 
+{
+    field(DESC, "Set Vector Magnitude Source")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(OUT, "@devLakeshore_460.proto setSource $(PORT)")
+    field(ONST, "XYZ")
+    field(TWST, "XY")
+    field(THST, "XZ")
+    field(FRST, "YZ")
+    field(FVST, "X-Y")
+}
+
+record(mbbi, "$(P)CHANNEL") 
+{
+    field(DESC, "Get Channel")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP, "@devLakeshore_460.proto getChannel $(PORT)")
+    field(ONST, "Channel X")
+    field(TWST, "Channel Y")
+    field(THST, "Channel Z")
+    field(FRST, "Vector Magnitude Channel")
+}
+
+record(mbbo, "$(P)CHANNEL:SP") 
+{
+    field(DESC, "Set Channel")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(OUT, "@devLakeshore_460.proto setChannel $(PORT)")
+    field(ONST, "Channel X")
+    field(TWST, "Channel Y")
+    field(THST, "Channel Z")
+    field(FRST, "Vector Magnitude Channel")
+}
+
+record(ai, "$(P)FWIN") 
+{
+    field(DESC, "Display Filter Window")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getDisplayFilterWindow $(PORT)")
+    field(HIHI, "10")
+    field(LOLO, "1")
+    field(HHSV,"MAJOR")
+    field(LLSV,"MAJOR")
+}
+
+record(ao, "$(P)FWIN:SP") 
+{
+    field(DESC, "Set Display Filter Points")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(OUT,  "@devLakeshore_460.proto setDisplayFilterWindow $(PORT)")
+    field(HIHI, "10")
+    field(LOLO, "1")
+    field(HHSV,"MAJOR")
+    field(LLSV,"MAJOR")
+}
+
+record(ai, "$(P)FNUM") 
+{
+    field(DESC, "Display Filter Window")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(INP,  "@devLakeshore_460.proto getFilterPoints $(PORT)")
+    field(HIHI, "64")
+    field(LOLO, "2")
+    field(HHSV,"MAJOR")
+    field(LLSV,"MAJOR")
+}
+
+record(ao, "$(P)FNUM:SP") 
+{
+    field(DESC, "Set Display Filter Window")
+    field(SCAN, "1 second")
+    field(DTYP, "stream")
+    field(OUT,  "@devLakeshore_460.proto setFilterPoints $(PORT)")
+    field(HIHI, "64")
+    field(LOLO, "2")
+    field(HHSV,"MAJOR")
+    field(LLSV,"MAJOR")
+}
+
