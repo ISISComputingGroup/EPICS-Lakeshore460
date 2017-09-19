@@ -8,16 +8,388 @@ getIDN {
     ExtraInput = Ignore;
 }
 
+getMagneticFieldReading
+{
+	out "FIELD?";
+    in "%d";
+}
+
+readXFieldReading
+{
+    out "CHNL X";
+    getMagneticFieldReading;
+}
+
+readYFieldReading
+{
+    out "CHNL Y";
+    getMagneticFieldReading;
+}
+
+readZFieldReading
+{
+    out "CHNL Z";
+    getMagneticFieldReading;
+}
+
+readVFieldReading
+{
+    out "CHNL V";
+    getMagneticFieldReading;
+}
+
 getUnit
 {
     out "UNIT?";
     in "%s";
-    ExtraInput = Ignore;
+}
+
+readXUnit
+{
+    out "CHNL X";
+    getUnit;
+}
+
+readYUnit
+{
+    out "CHNL Y";
+    getUnit;
+}
+
+readZUnit
+{
+    out "CHNL Z";
+    getUnit;
+}
+
+readVUnit
+{
+    out "CHNL V";
+    getUnit;
 }
 
 setUnit
 {
     out "UNIT %{G|T}";
+}
+
+setXUnit
+{
+    out "CHNL X";
+    setUnit;
+}
+
+setYUnit
+{
+    out "CHNL Y";
+    setUnit;
+}
+
+setZUnit
+{
+    out "CHNL Z";
+    setUnit;
+}
+
+setVUnit
+{
+    out "CHNL V";
+    setUnit;
+}
+
+getACDCFieldReading
+{
+	out "ACDC?";
+    in "%d";
+}
+
+readXACDCFieldReading
+{
+    out "CHNL X";
+    getACDCFieldReading;
+}
+
+readYACDCFieldReading
+{
+    out "CHNL Y";
+    getACDCFieldReading;
+}
+
+readZACDCFieldReading
+{
+    out "CHNL Z";
+    getACDCFieldReading;
+}
+
+readVACDCFieldReading
+{
+    out "CHNL V";
+    getACDCFieldReading;
+}
+
+setACDCFieldReading
+{
+    out "ACDC %{0|1}";
+}
+
+setXACDCFieldReading
+{
+    out "CHNL X";
+    setACDCFieldReading;
+}
+
+setYACDCFieldReading
+{
+    out "CHNL Y";
+    setACDCFieldReading;
+}
+
+setZACDCFieldReading
+{
+    out "CHNL Z";
+    setACDCFieldReading;
+}
+
+setVACDCFieldReading
+{
+    out "CHNL V";
+    setACDCFieldReading;
+}
+
+getOnOff
+{
+	out "ONOFF?";
+    in "%d";
+}
+
+readXOnOff
+{
+    out "CHNL X";
+    getOnOff;
+}
+
+readYOnOff
+{
+    out "CHNL Y";
+    getOnOff;
+}
+
+readZOnOff
+{
+    out "CHNL Z";
+    getOnOff;
+}
+
+readVOnOff
+{
+    out "CHNL V";
+    getOnOff;
+}
+
+setOnOff
+{
+	out "ONOFF %{0|1}";
+}
+
+setXOnOff
+{
+    out "CHNL X";
+    setOnOff;
+}
+
+setYOnOff
+{
+    out "CHNL Y";
+    setOnOff;
+}
+
+setZOnOff
+{
+    out "CHNL Z";
+    setOnOff;
+}
+
+setVOnOff
+{
+    out "CHNL V";
+    setOnOff;
+}
+
+getAutoRange
+{
+    out "AUTO?";
+    in "%d";
+}
+
+readXAutoRange
+{
+    out "CHNL X";
+    getAutoRange;
+}
+
+readYAutoRange
+{
+    out "CHNL Y";
+    getAutoRange;
+}
+
+readZAutoRange
+{
+    out "CHNL Z";
+    getAutoRange;
+}
+
+readVAutoRange
+{
+    out "CHNL V";
+    getAutoRange;
+}
+
+setAutoRange
+{
+    out "AUTO %{0|1}";
+}
+
+setXAutoRange
+{
+    out "CHNL X";
+    setAutoRange;
+}
+
+setYAutoRange
+{
+    out "CHNL Y";
+    setAutoRange;
+}
+
+setZAutoRange
+{
+    out "CHNL Z";
+    setAutoRange;
+}
+
+setVAutoRange
+{
+    out "CHNL V";
+    setAutoRange;
+}
+
+getManualRange
+{
+    out "RANGE?";
+    in "%d";
+}
+
+readXManualRange
+{
+    out "CHNL X";
+    getManualRange;
+}
+
+readYManualRange
+{
+    out "CHNL Y";
+    getManualRange;
+}
+
+readZManualRange
+{
+    out "CHNL Z";
+    getManualRange;
+}
+
+readVManualRange
+{
+    out "CHNL V";
+    getManualRange;
+}
+
+setManualRange
+{
+    out "RANGE %d";
+}
+
+setXManualRange
+{
+    out "CHNL X";
+    setManualRange;
+}
+
+setYManualRange
+{
+    out "CHNL Y";
+    setManualRange;
+}
+
+setZManualRange
+{
+    out "CHNL Z";
+    setManualRange;
+}
+
+setVManualRange
+{
+    out "CHNL V";
+    setManualRange;
+}
+
+setDisplayFilter
+{
+    out "FILT %{0|1}";
+}
+
+setXDisplayFilter
+{
+    out "CHNL X";
+    setDisplayFilter;
+}
+
+setYDisplayFilter
+{
+    out "CHNL Y";
+    setDisplayFilter;
+}
+
+setZDisplayFilter
+{
+    out "CHNL Z";
+    setDisplayFilter;
+}
+
+setVDisplayFilter
+{
+    out "CHNL V";
+    setDisplayFilter;
+}
+
+getDisplayFilter
+{
+	out "FILT?";
+    in "%d";
+}
+
+readXDisplayFilter
+{
+    out "CHNL X";
+    getDisplayFilter;
+}
+
+readYDisplayFilter
+{
+    out "CHNL Y";
+    getDisplayFilter;
+}
+
+readZDisplayFilter
+{
+    out "CHNL Z";
+    getDisplayFilter;
+}
+
+readVDisplayFilter
+{
+    out "CHNL V";
+    getDisplayFilter;
 }
 
 setSource
@@ -29,18 +401,11 @@ getSource
 {
  	out "VSRC?";
     in "%d";
-    ExtraInput = Ignore;
 }
-
-getChannel{
-	out "CHNL?";
-    in "%d";
-    
- }
 
 setChannel
 {
-	out "CHNL %d";
+ 	out "CHNL %{X|Y|Z|V}";
 }
 
 Reset
@@ -48,56 +413,40 @@ Reset
 	out "*RST";
 }
 
-getAllFields
-{
-	out "ALLF?";
-    in "%f";
-    ExtraInput = Ignore;
-}
-
 getMagneticFieldMultiplier
 {
  	out "FIELDM?";
     in "%d";
-    ExtraInput = Ignore;
- }
-
-getMagneticFieldReading
-{
- 	out "FIELD?";
-    in "%d";
-    ExtraInput = Ignore;
- }
-
-getOnOff
-{
-	out "ONOFF?";
-    in "%d";
-    ExtraInput = Ignore;
-}
-
-setOnOff
-{
-	out "ONOFF %{0|1}";
-}
-
-getACDCFieldReading
-{
-	out "ACDC?";
-    in "%d";
-    ExtraInput = Ignore;
-}
-
-setACDCFieldReading
-{
-    out "ACDC %{0|1}";
 }
 
 getPRMSReading
 {
 	out "PRMS?";
     in "%d";
-    ExtraInput = Ignore;
+}
+
+readXPRMSReading
+{
+    out "CHNL X";
+    getPRMSReading;
+}
+
+readYPRMSReading
+{
+    out "CHNL Y";
+    getPRMSReading;
+}
+
+readZPRMSReading
+{
+    out "CHNL Z";
+    getPRMSReading;
+}
+
+readVPRMSReading
+{
+    out "CHNL V";
+    getPRMSReading;
 }
 
 setPRMSReading
@@ -105,16 +454,28 @@ setPRMSReading
     out "PRMS %{0|1}";
 }
 
-getDisplayFilter
+setXPRMSReadinge
 {
-	out "FILT?";
-    in "%d";
-    ExtraInput = Ignore;
+    out "CHNL X";
+    setPRMSReading;
 }
 
-setDisplayFilter
+setYPRMSReading
 {
-    out "FILT %{0|1}";
+    out "CHNL Y";
+    setPRMSReading;
+}
+
+setZPRMSReading
+{
+    out "CHNL Z";
+    setPRMSReading;
+}
+
+setVPRMSReading
+{
+    out "CHNL V";
+    setPRMSReading;
 }
 
 getDisplayFilterWindow
@@ -123,9 +484,57 @@ getDisplayFilterWindow
       in "%d";
 }
 
+readXDisplayFilterWindow
+{
+      out "CHNL X";
+      getDisplayFilterWindow;
+}
+
+readYDisplayFilterWindow
+{
+      out "CHNL Y";
+      getDisplayFilterWindow
+}
+
+readZDisplayFilterWindow
+{
+      out "CHNL Z";
+      getDisplayFilterWindow
+}
+
+readVDisplayFilterWindow
+{
+      out "CHNL V";
+      getDisplayFilterWindow
+}
+
 setDisplayFilterWindow
 {
       out "FWIN %d";      
+}
+
+setXDisplayFilterWindow
+{
+    out "CHNL X";
+    setDisplayFilterWindow;
+}
+
+setYDisplayFilterWindow
+{
+    out "CHNL Y";
+    setDisplayFilterWindow;      
+}
+
+setZDisplayFilterWindow
+{
+    out "CHNL Z";
+    setDisplayFilterWindow;    
+}
+
+setVDisplayFilterWindow
+{
+    out "CHNL V";
+    setDisplayFilterWindow;     
 }
 
 setRelativeMode
@@ -133,11 +542,58 @@ setRelativeMode
     out "REL %{0|1}";
 }
 
+setXRelativeMode
+{
+    out "CHNL X";
+    setRelativeMode;
+}
+
+setYRelativeMode
+{
+    out "CHNL Y";
+    setRelativeMode;
+}
+
+setZRelativeMode
+{
+    out "CHNL Z";
+    setRelativeMode;
+}
+
+setVRelativeMode
+{
+    out "CHNL V";
+    setRelativeMode;
+}
+
 getRelativeMode
 {
      out "REL? %d";
      in "%d";
-     ExtraInput= Ignore;
+}
+
+readXRelativeMode
+{
+    out "CHNL X";
+    getRelativeMode;
+}
+
+readYRelativeMode
+{
+    out "CHNL Y";
+    getRelativeMode;
+}
+
+readZRelativeMode
+{
+    out "CHNL Z";
+    getRelativeMode;
+}
+
+readVRelativeMode
+{
+    out "CHNL V";
+    getRelativeMode;
 }
 
 setMaxHold
@@ -145,30 +601,88 @@ setMaxHold
     out "MAX %{0|1}";
 }
 
+setXMaxHold
+{
+    out "CHNL X";
+    setMaxHold;
+}
+
+setYMaxHold
+{
+    out "CHNL Y";
+    setMaxHold;
+}
+
+setZMaxHold
+{
+    out "CHNL Z";
+    setMaxHold;
+}
+
+setVMaxHold
+{
+    out "CHNL V";
+    setMaxHold;
+}
+
 getMaxHold
 {
     out "MAX?";
     in "%d";
-    ExtraInput = Ignore;
 }
 
-setAutoRange
+readXMaxHold
 {
-    out "AUTO %{0|1}";
+    out "CHNL X";
+    getMaxHold;
 }
 
-getAutoRange
+readYMaxHold
 {
-    out "AUTO?";
-    in "%d";
-    ExtraInput = Ignore;
+    out "CHNL Y";
+    getMaxHold;
+}
+
+readZMaxHold
+{
+    out "CHNL Z";
+    getMaxHold;
+}
+
+readVMaxHold
+{
+    out "CHNL V";
+    getMaxHold;
 }
 
 getFilterPoints
 {
     out "FNUM?";
     in "%d";
-    ExtraInput = Ignore;
+}
+
+readXFilterPoints
+{
+    out "CHNL X";
+    getFilterPoints;
+}
+
+readYFilterPoints
+{
+    out "CHNL Y";
+    getFilterPoints;
+}
+
+readZFilterPoints
+{
+    out "CHNL Z";
+    getFilterPoints;
+}
+
+readVFilterPoints
+{
+    out "CHNL V";
+    getFilterPoints;
 }
 
 setFilterPoints
@@ -176,15 +690,57 @@ setFilterPoints
     out "FNUM %d";
 }
 
-getManualRange
+setXFilterPoints
 {
-    out "RANGE?";
-    in "%d";
+    out "CHNL X";
+    setFilterPoints;
 }
 
-setManualRange
+setYFilterPoints
 {
-    out "RANGE %d";
+    out "CHNL Y";
+    setFilterPoints;
+}
+
+setZFilterPoints
+{
+    out "CHNL Z";
+    setFilterPoints;
+}
+
+setVFilterPoints
+{
+    out "CHNL V";
+    setFilterPoints;
+}
+
+setRelativeModeSetpoint
+{
+    out "RELS %f";
+}
+
+setXRelativeModeSetpoint
+{
+    out "CHNL X";
+    setRelativeModeSetpoint;
+}
+
+setYRelativeModeSetpoint
+{
+    out "CHNL Y";
+    setRelativeModeSetpoint;
+}
+
+setZRelativeModeSetpoint
+{
+    out "CHNL Z";
+    setRelativeModeSetpoint;
+}
+
+setVRelativeModeSetpoint
+{
+    out "CHNL V";
+    setRelativeModeSetpoint;
 }
 
 ReadMaxReadingMultiplier
@@ -200,10 +756,34 @@ ReadRelativeModeSetpointMultiplier
 
 }
 
-ReadRelativeModeSetpoint
+getRelativeModeSetpoint
 {
      out "RELS?";
      in "%f";
+}
+
+readXRelativeModeSetpoint
+{
+    out "CHNL X";
+    getRelativeModeSetpoint;
+}
+
+readYRelativeModeSetpoint
+{
+    out "CHNL Y";
+    getRelativeModeSetpoint;
+}
+
+readZRelativeModeSetpoint
+{
+    out "CHNL Z";
+    getRelativeModeSetpoint;
+}
+
+readVRelativeModeSetpoint
+{
+    out "CHNL V";
+    getRelativeModeSetpoint;
 }
 
 ReadMaxReading
@@ -212,25 +792,91 @@ ReadMaxReading
     in "%f";
 }
 
+readXMaxReading
+{
+    out "CHNL X";
+    ReadMaxReading;
+}
 
-getRelativeModeReading{
+readYMaxReading
+{
+    out "CHNL Y";
+    ReadMaxReading;
+}
+
+readZMaxReading
+{
+    out "CHNL Z";
+    ReadMaxReading;
+}
+
+readVMaxReading
+{
+    out "CHNL V";
+    ReadMaxReading;
+}
+
+getRelativeModeReading
+{
     out "RELR?";
     in "%f";
 }
 
-
-
-setRelativeModeSetpoint
+readXRelativeModeReading
 {
-    out "RELS %f";
+    out "CHNL X";
+    getRelativeModeReading;
 }
 
+readYRelativeModeReading
+{
+    out "CHNL Y";
+    getRelativeModeReading;
+}
 
-getRelativeModeReadingMultiplier{
+readZRelativeModeReading
+{
+    out "CHNL Z";
+    getRelativeModeReading;
+}
+
+readVRelativeModeReading
+{
+    out "CHNL V";
+    getRelativeModeReading;
+}
+
+getRelativeModeReadingMultiplier
+{
     out "RELRM?";
     in "%d";
 }
 
+setXMaxClear
+{
+    out "CHNL X";
+    MaxClear;
+}
 
+setYMaxClear
+{
+    out "CHNL Y";
+    MaxClear;
+}
 
+setZMaxClear
+{
+    out "CHNL Z";
+    MaxClear;
+}
 
+setVMaxClear
+{
+    out "CHNL V";
+    MaxClear;
+}
+
+MaxClear
+{
+    out "MAXC";
+}
