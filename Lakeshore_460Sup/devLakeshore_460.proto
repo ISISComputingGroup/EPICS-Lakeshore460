@@ -454,7 +454,7 @@ setPRMSReading
     out "PRMS %{0|1}";
 }
 
-setXPRMSReadinge
+setXPRMSReading
 {
     out "CHNL X";
     setPRMSReading;
@@ -852,6 +852,11 @@ getRelativeModeReadingMultiplier
     in "%d";
 }
 
+MaxClear
+{
+    out "MAXC";
+}
+
 setXMaxClear
 {
     out "CHNL X";
@@ -876,7 +881,3 @@ setVMaxClear
     MaxClear;
 }
 
-MaxClear
-{
-    out "MAXC";
-}
