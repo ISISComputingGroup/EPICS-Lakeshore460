@@ -8,6 +8,128 @@ getIDN {
     ExtraInput = Ignore;
 }
 
+### UNITS: GAUSS OR TESLA ###
+
+getUnitX
+{
+    out "CHNL X;UNIT?";
+    in "%s";
+}
+getUnitY
+{
+    out "CHNL Y;UNIT?";
+    in "%s";
+}
+getUnitZ
+{
+    out "CHNL Z;UNIT?";
+    in "%s";
+}
+getUnitV
+{
+    out "CHNL V;UNIT?";
+    in "%s";
+}
+setUnitX
+{
+    out "CHNL X;UNIT %{G|T}";	
+}
+
+setUnitY
+{
+    out "CHNL X;UNIT %{G|T}";    
+}
+setUnitZ
+{
+    out "CHNL Y;UNIT %{G|T}";    
+}
+setUnitV
+{
+    out "CHNL Z;UNIT %{G|T}";    
+}
+
+### STATUS: CHANNEL ON/OFF ###
+
+getStatusX
+{
+    out "CHNL X ONOFF?";
+    in "%d"
+}
+getStatusY
+{
+    out "CHNL Y ONOFF?";
+    in "%d"
+}
+getStatusZ
+{
+    out "CHNL Z ONOFF?";
+    in "%d"
+}
+getStatusV
+{
+    out "CHNL V ONOFF?";
+    in "%d"
+}
+setStatusX
+{
+	out "CHNL X;ONOFF %{0|1}";
+    in "%d";
+}
+setStatusY
+{
+	out "CHNL Y;ONOFF %{0|1}";
+    in "%d";
+}
+setStatusZ
+{
+	out "CHNL Z;ONOFF %{0|1}";
+    in "%d";
+}
+setStatusV
+{
+	out "CHNL V;ONOFF %{0|1}";
+    in "%d";
+}
+
+### FIELD: AC OR DC ###
+
+getModeX {
+	out "CHNL X;ACDC?";
+	in "%d";
+}
+getModeY {
+	out "CHNL Y;ACDC?";
+	in "%d";
+}
+getModeZ {
+	out "CHNL Z;ACDC?";
+	in "%d";
+}
+getModeV {
+	out "CHNL V;ACDC?";
+	in "%d";
+}
+
+setModeX {
+	out "CHNL X; ACDC %{0|1}";
+}
+setModeY {
+	out "CHNL Y; ACDC %{0|1}";
+}
+setModeZ {
+	out "CHNL Z; ACDC %{0|1}";
+}
+setModeV {
+	out "CHNL V; ACDC %{0|1}";
+}
+
+
+
+
+
+
+
+
 getMagneticFieldReading
 {
 	out "FIELD?";
@@ -34,15 +156,11 @@ readZFieldReading
 
 readVFieldReading
 {
-    out "CHNL V";
+    out "FIELD?;CHNL V";
     getMagneticFieldReading;
 }
 
-getUnit
-{
-    out "UNIT?";
-    in "%s";
-}
+
 
 readXUnit
 {
@@ -68,34 +186,7 @@ readVUnit
     getUnit;
 }
 
-setUnit
-{
-    out "UNIT %{G|T}";
-}
 
-setXUnit
-{
-    out "CHNL X";
-    setUnit;
-}
-
-setYUnit
-{
-    out "CHNL Y";
-    setUnit;
-}
-
-setZUnit
-{
-    out "CHNL Z";
-    setUnit;
-}
-
-setVUnit
-{
-    out "CHNL V";
-    setUnit;
-}
 
 getACDCFieldReading
 {
@@ -156,64 +247,7 @@ setVACDCFieldReading
     setACDCFieldReading;
 }
 
-getOnOff
-{
-	out "ONOFF?";
-    in "%d";
-}
 
-readXOnOff
-{
-    out "CHNL X";
-    getOnOff;
-}
-
-readYOnOff
-{
-    out "CHNL Y";
-    getOnOff;
-}
-
-readZOnOff
-{
-    out "CHNL Z";
-    getOnOff;
-}
-
-readVOnOff
-{
-    out "CHNL V";
-    getOnOff;
-}
-
-setOnOff
-{
-	out "ONOFF %{0|1}";
-}
-
-setXOnOff
-{
-    out "CHNL X";
-    setOnOff;
-}
-
-setYOnOff
-{
-    out "CHNL Y";
-    setOnOff;
-}
-
-setZOnOff
-{
-    out "CHNL Z";
-    setOnOff;
-}
-
-setVOnOff
-{
-    out "CHNL V";
-    setOnOff;
-}
 
 getAutoRange
 {
