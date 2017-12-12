@@ -3,6 +3,7 @@ ReplyTimeout = 2000;
 
 getIDN {
     out "*IDN?";
+	wait 50;
     #Read no more that 39 chars (EPICS limit)
     in "%/(.{0,39})/";
     ExtraInput = Ignore;
@@ -10,120 +11,170 @@ getIDN {
 
 # Channel arguments passed though as \$1 ##
 
-getUnit
+getMagneticFieldReading
+{
+	out "CHNL \$1;FIELD?";
+	wait 50;
+	in "%f";
+	@mismatch { in 0; }
+	ExtraInput = Ignore;
+}
+
+getMagneticFieldUnitsMultiplier
+{
+	out "FIELDM?";
+	in "%s"	
+	
+}
+
+getMagneticFieldUnits
 {
     out "CHNL \$1;UNIT?";
+	wait 50;
     in "%s";
 }
 
-setUnit
+setMagneticFieldUnits
 {
-    out "CHNL \$1;UNIT %{G|T}";	
+    out "CHNL \$1;UNIT %{G|T}";
+	wait 50;	
 }
 
 getStatus
 {
-    out "CHNL \$1;ONOFF?";
+    out "ONOFF?";
+	wait 50;
     in "%d"
 }
 
 setStatus
 {
-	out "CHNL \$1;ONOFF %{0|1}";
+	out "ONOFF %{0|1}";
+	wait 50;
     in "%d";
 }
 
-getMode {
+getACDCFieldReading {
 	out "CHNL \$1;ACDC?";
+	wait 50;
 	in "%d";
 }
 
-setMode {
+setACDCFieldReading {
 	out "CHNL \$1;ACDC %{0|1}";
+	wait 50;
 }
 
-getPRMS {
+getPRMSReading {
 	out "CHNL \$1;PRMS?";
+	wait 50;
 	in "%d";
 }
 
-setPRMS {
+setPRMSReading {
 	out "CHNL \$1;PRMS %{0|1}";
+	wait 50;
 }
 
 getFilter {
 	out "CHNL \$1;FILT?";
+	wait 50;
 	in "%d";
 }
 
 setFilter {
 	out "CHNL \$1;FILT %{0|1}";
+	wait 50;
 }
 
 getRelMode {
-	out "CHNL \$1;RELR?";
+	out "CHNL \$1;REL?";
+	wait 50;
 	in "%d";
 }
 
 setRelMode {
-	out "CHNL \$1;RELS %f";
+	out "CHNL \$1;REL %{0|1}";
+	wait 50;
 }
 
 getMaxHold {
 	out "CHNL \$1;MAX?";
+	wait 50;
 	in "%d";
 }
 
 setMaxHold {
 	out "CHNL \$1;MAX %{0|1}";
+	wait 50;
 }
 
-getAuto {
+getAutoRange {
 	out "CHNL \$1;AUTO?";
+	wait 50;
 	in "%d";
 }
 
-setAuto {
+setAutoRange {
 	out "CHNL \$1;AUTO %{0|1}";
+	wait 50;
 }
 
 getAllFields {
 	out "ALLF?";
+	wait 50;
 	in "%f";	
 }
 
 getSource {
 	out "VSRC?";
-	in "%f";
+	wait 50;
+	in "%d";
 }
 
 setSource {
 	out "VSRC %d";
+	wait 50;
 }
 
 getChannel {
 	out "CHNL?";
-	in "%d";
+	wait 50;
+	in "%s";
 }
 
 setChannel {
 	out "CHNL %d";
+	wait 50;
 }
 
 getFWin {
 	out "CHNL \$1;FWIN?";
+	wait 50;
 	in "%d";
 }
 
 setFWin {
 	out "CHNL \$1;FWIN %d";
+	wait 50;
 }
 
 getFNum {
 	out "CHNL \$1;FNUM?";
+	wait 50;
 	in "%d";
 }
 
 setFNum {
 	out "CHNL \$1;FNUM %d";
+	wait 50;
+}
+
+getManualRange {
+	out "RANGE?";
+	in "%d";
+}
+
+setManualRange {
+	out "RANGE %d";
 }
