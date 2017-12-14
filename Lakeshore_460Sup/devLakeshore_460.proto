@@ -65,7 +65,7 @@ getACDCFieldReading {
 setACDCFieldReading {
 	out "CHNL \$1;ACDC %{0|1}";
 	wait 50;
-	@init { out "CHNL \$1;ACDC??"; in "%d"; wait 50; }
+	@init { out "CHNL \$1;ACDC?"; in "%d"; wait 50; }
 }
 
 getPRMSReading {
@@ -77,6 +77,7 @@ getPRMSReading {
 setPRMSReading {
 	out "CHNL \$1;PRMS %{0|1}";
 	wait 50;
+	@init { out "CHNL \$1;PRMS?"; in "%d"; wait 50; }
 }
 
 getFilter {
@@ -88,6 +89,7 @@ getFilter {
 setFilter {
 	out "CHNL \$1;FILT %{0|1}";
 	wait 50;
+	@init { out "CHNL \$1;FILT?"; in "%d"; wait 50; }
 }
 
 getRelMode {
@@ -99,6 +101,13 @@ getRelMode {
 setRelMode {
 	out "CHNL \$1;REL %{0|1}";
 	wait 50;
+	@init { out "CHNL \$1;REL?"; in "%d"; wait 50; }
+}
+
+getRelModeReading {
+	out "CHNL \$1;RELR?";
+	in "%f";
+	ExtraInput = Ignore;
 }
 
 getMaxHold {
@@ -110,6 +119,7 @@ getMaxHold {
 setMaxHold {
 	out "CHNL \$1;MAX %{0|1}";
 	wait 50;
+	@init { out "CHNL \$1;MAX?"; in "%d"; wait 50; }
 }
 
 getAutoRange {
@@ -121,6 +131,7 @@ getAutoRange {
 setAutoRange {
 	out "CHNL \$1;AUTO %{0|1}";
 	wait 50;
+	@init { out "CHNL \$1;AUTO?"; in "%d"; wait 50; }
 }
 
 getAllFields {
@@ -138,6 +149,7 @@ getSource {
 setSource {
 	out "VSRC %d";
 	wait 50;
+	@init { out "VSRC?"; in "%d"; wait 50; }
 }
 
 getChannel {
@@ -149,6 +161,7 @@ getChannel {
 setChannel {
 	out "CHNL %d";
 	wait 50;
+	@init { out "CHNL?"; in "%s"; wait 50; }
 }
 
 getFWin {
@@ -160,6 +173,7 @@ getFWin {
 setFWin {
 	out "CHNL \$1;FWIN %d";
 	wait 50;
+	@init { out "CHNL \$1;FWIN?"; in "%d"; wait 50; }
 }
 
 getFNum {
@@ -171,6 +185,7 @@ getFNum {
 setFNum {
 	out "CHNL \$1;FNUM %d";
 	wait 50;
+	@init { out "CHNL \$1;FNUM?"; in "%d"; wait 50; }
 }
 
 getManualRange {
@@ -180,6 +195,8 @@ getManualRange {
 
 setManualRange {
 	out "CHNL \$1;RANGE %d";
+	wait 50;
+	@init { out "CHNL \$1;RANGE?"; in "%d"; wait 50; }
 }
 
 getMaxReading {
@@ -188,8 +205,9 @@ getMaxReading {
 	ExtraInput = Ignore;
 }
 
-getRelModeReading {
-	out "CHNL \$1;RELR?";
-	in "%f";
-	ExtraInput = Ignore;
+setMaxReading {
+	out "CHNL \$1;MAXC";
+	wait 50;
 }
+
+
