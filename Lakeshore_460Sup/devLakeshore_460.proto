@@ -8,7 +8,7 @@ getIDN {
 	wait 50;
     #Read no more that 39 chars (EPICS limit)
     in "LSCI,MODEL460,0,%s";
-    ExtraInput = Ignore;
+    
 }
 
 # Channel arguments passed though as \$1 ##
@@ -17,15 +17,15 @@ getMagneticFieldReading
 {
 	out "CHNL \$1;FIELD?";
 	wait 50;
-	in "%*{+|-}%f";
-	@mismatch { in 5; }
+	in "%f";
 	ExtraInput = Ignore;
 }
 
 getMagneticFieldUnitsMultiplier
 {
 	out "CHNL \$1;FIELDM?";
-	in "%s"	
+	in "%s";	
+	
 }
 
 getMagneticFieldUnits
@@ -33,6 +33,7 @@ getMagneticFieldUnits
     out "UNIT?";
 	wait 50;
     in "%s";
+	
 }
 
 setMagneticFieldUnits
@@ -47,6 +48,7 @@ getStatus
     out "CHNL \$1;ONOFF?";	
     in "%d";
 	wait 50;
+	
 }
 
 setStatus
@@ -72,6 +74,7 @@ getPRMSReading {
 	out "CHNL \$1;PRMS?";
 	wait 50;
 	in "%d";
+	
 }
 
 setPRMSReading {
@@ -84,6 +87,7 @@ getFilter {
 	out "CHNL \$1;FILT?";
 	wait 50;
 	in "%d";
+	
 }
 
 setFilter {
@@ -96,6 +100,7 @@ getRelMode {
 	out "CHNL \$1;REL?";
 	wait 50;
 	in "%d";
+	
 }
 
 setRelMode {
@@ -104,16 +109,42 @@ setRelMode {
 	@init { out "CHNL \$1;REL?"; in "%d"; wait 50; }
 }
 
+getRelModeSetpoint {
+	out "CHNL \$1;RELS?";
+	wait 50;
+	in "%f";
+	ExtraInput = Ignore;
+}
+
+setRelModeSetpoint {
+	out "CHNL \$1;RELS %f";
+	wait 50;
+	@init { out "CHNL \$1;RELS?"; in "%f"; wait 50; }
+}
+
+getRelModeSetpointMultiplier {
+	out "CHNL \$1;RELSM?";
+	wait 50;
+}
+
 getRelModeReading {
 	out "CHNL \$1;RELR?";
 	in "%f";
 	ExtraInput = Ignore;
 }
 
+getRelModeMultiplier
+{
+	out "CHNL \$1;RELRM?";
+	in "%s";	
+	
+}
+
 getMaxHold {
 	out "CHNL \$1;MAX?";
 	wait 50;
 	in "%d";
+	
 }
 
 setMaxHold {
@@ -122,10 +153,18 @@ setMaxHold {
 	@init { out "CHNL \$1;MAX?"; in "%d"; wait 50; }
 }
 
+getMaxHoldMultiplier
+{
+	out "CHNL \$1;MAXRM?";
+	in "%s";	
+	
+}
+
 getAutoRange {
 	out "CHNL \$1;AUTO?";
 	wait 50;
 	in "%d";
+	
 }
 
 setAutoRange {
@@ -138,12 +177,14 @@ getAllFields {
 	out "ALLF?";
 	wait 50;
 	in "%f";	
+	
 }
 
 getSource {
 	out "VSRC?";
 	wait 50;
 	in "%d";
+	
 }
 
 setSource {
@@ -156,18 +197,20 @@ getChannel {
 	out "CHNL?";
 	wait 50;
 	in "%s";
+	
 }
 
 setChannel {
 	out "CHNL %d";
 	wait 50;
-	@init { out "CHNL?"; in "%s"; wait 50; }
+	@init { getChannel; }
 }
 
 getFWin {
 	out "CHNL \$1;FWIN?";
 	wait 50;
 	in "%d";
+	
 }
 
 setFWin {
@@ -180,6 +223,7 @@ getFNum {
 	out "CHNL \$1;FNUM?";
 	wait 50;
 	in "%d";
+	
 }
 
 setFNum {
@@ -191,6 +235,7 @@ setFNum {
 getManualRange {
 	out "CHNL \$1;RANGE?";
 	in "%d";
+	
 }
 
 setManualRange {
@@ -205,7 +250,7 @@ getMaxReading {
 	ExtraInput = Ignore;
 }
 
-setMaxReading {
+clearMaxHoldReading {
 	out "CHNL \$1;MAXC";
 	wait 50;
 }
