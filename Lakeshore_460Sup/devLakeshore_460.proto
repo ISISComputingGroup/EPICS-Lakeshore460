@@ -7,8 +7,7 @@ getIDN {
     out "*IDN?";
 	wait 50;
     #Read no more that 39 chars (EPICS limit)
-    in "LSCI,MODEL460,0,%s";
-    
+    in "LSCI,MODEL460,0,%s";    
 }
 
 # Channel arguments passed though as \$1 ##
@@ -25,15 +24,13 @@ getMagneticFieldUnitsMultiplier
 {
 	out "CHNL \$1;FIELDM?";
 	in "%s";	
-	
 }
 
 getMagneticFieldUnits
 {
     out "UNIT?";
 	wait 50;
-    in "%s";
-	
+    in "%s";	
 }
 
 setMagneticFieldUnits
@@ -47,8 +44,7 @@ getStatus
 {
     out "CHNL \$1;ONOFF?";	
     in "%d";
-	wait 50;
-	
+	wait 50;	
 }
 
 setStatus
@@ -73,8 +69,7 @@ setACDCFieldReading {
 getPRMSReading {
 	out "CHNL \$1;PRMS?";
 	wait 50;
-	in "%d";
-	
+	in "%d";	
 }
 
 setPRMSReading {
@@ -99,8 +94,7 @@ setFilter {
 getRelMode {
 	out "CHNL \$1;REL?";
 	wait 50;
-	in "%d";
-	
+	in "%d";	
 }
 
 setRelMode {
@@ -136,15 +130,13 @@ getRelModeReading {
 getRelModeMultiplier
 {
 	out "CHNL \$1;RELRM?";
-	in "%s";	
-	
+	in "%s";		
 }
 
 getMaxHold {
 	out "CHNL \$1;MAX?";
 	wait 50;
-	in "%d";
-	
+	in "%d";	
 }
 
 setMaxHold {
@@ -157,14 +149,12 @@ getMaxHoldMultiplier
 {
 	out "CHNL \$1;MAXRM?";
 	in "%s";	
-	
 }
 
 getAutoRange {
 	out "CHNL \$1;AUTO?";
 	wait 50;
-	in "%d";
-	
+	in "%d";	
 }
 
 setAutoRange {
@@ -176,15 +166,13 @@ setAutoRange {
 getAllFields {
 	out "ALLF?";
 	wait 50;
-	in "%f";	
-	
+	in "%f";		
 }
 
 getSource {
 	out "VSRC?";
 	wait 50;
-	in "%d";
-	
+	in "%d";	
 }
 
 setSource {
@@ -196,8 +184,7 @@ setSource {
 getChannel {
 	out "CHNL?";
 	wait 50;
-	in "%s";
-	
+	in "%s";	
 }
 
 setChannel {
@@ -209,8 +196,7 @@ setChannel {
 getFWin {
 	out "CHNL \$1;FWIN?";
 	wait 50;
-	in "%d";
-	
+	in "%d";	
 }
 
 setFWin {
@@ -222,8 +208,7 @@ setFWin {
 getFNum {
 	out "CHNL \$1;FNUM?";
 	wait 50;
-	in "%d";
-	
+	in "%d";	
 }
 
 setFNum {
@@ -234,8 +219,7 @@ setFNum {
 
 getManualRange {
 	out "CHNL \$1;RANGE?";
-	in "%d";
-	
+	in "%d";	
 }
 
 setManualRange {
@@ -254,5 +238,3 @@ clearMaxHoldReading {
 	out "CHNL \$1;MAXC";
 	wait 50;
 }
-
-
