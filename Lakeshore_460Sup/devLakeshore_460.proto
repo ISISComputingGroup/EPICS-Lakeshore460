@@ -44,7 +44,7 @@ setFieldUnits
 getStatus
 {
     out "CHNL \$1;ONOFF?";	
-    in "%d";
+    in "%{0|1}";
 	wait 50;	
 }
 
@@ -52,31 +52,31 @@ setStatus
 {
 	out "CHNL \$1;ONOFF %{0|1}";
 	wait 50;
-	@init { out "CHNL \$1;ONOFF?"; in "%d"; wait 50; }
+	@init { out "CHNL \$1;ONOFF?"; in "%{0|1}"; wait 50; }
 }
 
 getACDCFieldReading {
 	out "CHNL \$1;ACDC?";
-	in "%d";
+	in "%{0|1}";
 	wait 50;
 }
 
 setACDCFieldReading {
 	out "CHNL \$1;ACDC %{0|1}";
 	wait 50;
-	@init { out "CHNL \$1;ACDC?"; in "%d"; wait 50; }
+	@init { out "CHNL \$1;ACDC?"; in "%{0|1}"; wait 50; }
 }
 
 getPRMSReading {
 	out "CHNL \$1;PRMS?";	
-	in "%d";
+	in "%{0|1}";
 	wait 50;	
 }
 
 setPRMSReading {
 	out "CHNL \$1;PRMS %{0|1}";
 	wait 50;
-	@init { out "CHNL \$1;PRMS?"; in "%d"; wait 50; }
+	@init { out "CHNL \$1;PRMS?"; in "%{0|1}"; wait 50; }
 }
 
 getFilter {
@@ -88,19 +88,19 @@ getFilter {
 setFilter {
 	out "CHNL \$1;FILT %{0|1}";
 	wait 50;
-	@init { out "CHNL \$1;FILT?"; in "%d"; wait 50; }
+	@init { out "CHNL \$1;FILT?"; in "%{0|1}"; wait 50; }
 }
 
 getRelMode {
 	out "CHNL \$1;REL?";
-	in "%d";
+	in "%{0|1}";
 	wait 50;	
 }
 
 setRelMode {
 	out "CHNL \$1;REL %{0|1}";
 	wait 50;
-	@init { out "CHNL \$1;REL?"; in "%d"; wait 50; }
+	@init { out "CHNL \$1;REL?"; in "%{0|1}"; wait 50; }
 }
 
 getRelModeSetpoint {
@@ -138,14 +138,14 @@ getRelModeMultiplier
 
 getMaxHold {
 	out "CHNL \$1;MAX?";
-	in "%d";	
+	in "%{0|1}";	
 	wait 50;
 }
 
 setMaxHold {
 	out "CHNL \$1;MAX %{0|1}";
 	wait 50;
-	@init { out "CHNL \$1;MAX?"; in "%d"; wait 50; }
+	@init { out "CHNL \$1;MAX?"; in "%{0|1}"; wait 50; }
 }
 
 getMaxHoldMultiplier
@@ -157,14 +157,14 @@ getMaxHoldMultiplier
 
 getAutoRange {
 	out "CHNL \$1;AUTO?";
-	in "%d";
+	in "%{0|1}";
 	wait 50;	
 }
 
 setAutoRange {
 	out "CHNL \$1;AUTO %{0|1}";
 	wait 50;
-	@init { out "CHNL \$1;AUTO?"; in "%d"; wait 50; }
+	@init { out "CHNL \$1;AUTO?"; in "%{0|1}"; wait 50; }
 }
 
 getAllFields {
