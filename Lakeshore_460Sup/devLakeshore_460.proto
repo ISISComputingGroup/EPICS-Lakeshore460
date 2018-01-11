@@ -187,13 +187,13 @@ setSource {
 
 getChannel {
 	out "CHNL?";
-	in "%s";
+	in "%{X|Y|Z|V}";
 	wait 50;	
 	ExtraInput = Ignore;
 }
 
 setChannel {
-	out "CHNL %d";
+	out "CHNL %{X|Y|Z|V}";
 	wait 50;
 	@init { getChannel; }
 }
