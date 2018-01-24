@@ -38,7 +38,7 @@ setFieldUnits
 {
     out "CHNL X;UNIT %{G|T}";
 	wait 50;	
-	@init { out "CHNLX;UNIT?"; in "%{G|T}"; wait 50; }
+	@init { getFieldUnits; }
 }
 
 getStatus
